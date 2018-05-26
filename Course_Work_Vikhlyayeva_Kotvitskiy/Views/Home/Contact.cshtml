@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+@Styles.Render("~/Content/css")
+
+<div class="bg"></div>
+
+<div class="input_data">
+
+    <div class="generation">
+        <h2>Генерація початкових даних</h2>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        <div class="form-container">
+            <form class="signin-form" method="POST">
+                <div class="inputs-area">
+                    <div class="input">
+                        <div class="form-group">
+                            <label class="input-min" for="inputsm">Введіть кількість вершин графу:</label>
+                            <input type="number" class="form-control input-sm" id="inputsm" min=1 max=30 @Html.TextBox("minValue")>
+                            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від 1 до 30">?</a>
+
+                            <div class="alert alert-success">
+                                Початкове значення повинно знаходитися в діапазоні від 1 до 30
+                            </div>
+                        </div>
+
+                        @*<div class="form-group">
+            <label class="input-min" for="inputsm">Введіть кінцеве значення діапазону:</label>
+            <input type="number" class="form-control input-sm" id="inputsm" min=-1000 max=1000 @Html.TextBox("maxValue")
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від -1000 до 1000">?</a>
+
+            <div class="alert alert-danger">
+                <strong>Увага! </strong>Кінцеве значення повинно знаходитися в діапазоні від -1000 до 1000
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="input-min" for="inputsm">Введіть кількість елементів масиву:</label>
+            <input type="number" class="form-control input-sm" id="inputsm" min=0 max=30 @Html.TextBox("count")
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від 0 до 30">?</a>
+
+            <div class="alert alert-info">
+                <strong>Увага! </strong>Кількість елементів повинна бути не більше 30
+            </div>
+        </div>*@
+                        <br>
+
+                        <div class="generation">
+                            <h4>Оберіть метод кластеризації графа:</h4>
+                        </div>
+
+                        <div class="dzen">
+                            <p>@Html.RadioButton("distribution", "nedzen", new { @class = "dzen" }) метод  K - середніх </p>
+                            <p>@Html.RadioButton("distribution", "dzen", new { @class = "dzen" }) метод Forel </p>
+                        </div>
+
+
+                        @*<div class="box">
+            <button class="main_poisk" name="confirm" type="submit" value="inputs">
+                <span>
+                </span>
+            </button>
+        </div>*@
+                        @*<div class="generation">
+            <h4><b>Згенерована початкова множина:</b></h4>
+        </div>
+
+        <p><textarea cols="1000" rows="6" name="comment"> @ZERO.Models.Sets.startSet </textarea></p>
+        <br>
+
+        <div class="alghorithm">
+            <div class="generation">
+                <h4>Оберіть алгоритм для подальшої роботи з програмою:</h4>
+            </div>
+
+            <div class="dzen">
+                <p>@Html.RadioButton("althoritm", "greedy") Жадібний алгоритм</p>
+                <p>@Html.RadioButton("althoritm", "brute") Повний перебір</p>
+            </div>
+        </div>*@
+                        <button id="#st" type="submit" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalAng"></button>
+                        @*<div class="box">
+            <button class="main_poisk" type="submit" name="confirm" value="Пошук рішення">
+
+            </button>
+        </div>*@
+
+
+                        <div class="final_set">
+                            <div class="generation">
+                                @*<h4><b>Остаточна множина:</b></h4>*@
+                            </div>
+                            <p><textarea cols="100" rows="6" name="comment"> </textarea></p>
+                            <br>
+                        </div>
+                       <script>
+                            window.onload = function () {
+
+                                var chart = new CanvasJS.Chart("chartContainer", {
+                                    animationEnabled: true,
+                                    zoomEnabled: true,
+                                    title: {
+                                        text: "Real Estate Rates"
+                                    },
+                                    axisX: {
+                                        title: "Area (in sq. ft)",
+                                        minimum: 790,
+                                        maximum: 2260
+                                    },
+                                    axisY: {
+                                        title: "Price (in USD)",
+                                        valueFormatString: "$#,##0k"
+                                    },
+                                    data: [{
+                                        type: "scatter",
+                                        toolTipContent: "<b>Area: </b>{x} sq.ft<br/><b>Price: </b>${y}k",
+                                        dataPoints: [
+                                            { x: 800, y: 350 },
+                                            { x: 900, y: 450 },
+                                            { x: 850, y: 450 },
+                                            { x: 1250, y: 700 },
+                                            { x: 1100, y: 650 },
+                                            { x: 1350, y: 850 },
+                                            { x: 1200, y: 900 },
+                                            { x: 1410, y: 1250 },
+                                            { x: 1250, y: 1100 },
+                                            { x: 1400, y: 1150 },
+                                            { x: 1500, y: 1050 },
+                                            { x: 1330, y: 1120 },
+                                            { x: 1580, y: 1220 },
+                                            { x: 1620, y: 1400 },
+                                            { x: 1250, y: 1450 },
+                                            { x: 1350, y: 1600 },
+                                            { x: 1650, y: 1300 },
+                                            { x: 1700, y: 1620 },
+                                            { x: 1750, y: 1700 },
+                                            { x: 1830, y: 1800 },
+                                            { x: 1900, y: 2000 },
+                                            { x: 2050, y: 2200 },
+                                            { x: 2150, y: 1960 },
+                                            { x: 2250, y: 1990 }
+                                        ]
+                                    }]
+                                });
+                                chart.render();
+
+                            }
+                        </script>
+                        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                        <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+                    </div>
+                    </div>
+            </form>
+        </div>
+    }
+</div>

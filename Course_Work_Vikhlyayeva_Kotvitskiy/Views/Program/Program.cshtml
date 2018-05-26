@@ -1,0 +1,104 @@
+﻿@{
+    /**/
+
+    ViewBag.Title = "Program";
+}
+
+@Styles.Render("~/Content/css")
+
+<div class="bg"></div>
+
+<div class="input_data">
+
+    <div class="generation">
+        <h2>Генерація початкових даних</h2>
+    </div>
+
+    @using (Html.BeginForm())
+    {
+
+    <div class="input">
+        <div class="form-group">
+            <label class="input-min" for="inputsm">Введіть кількість вершин графу:</label>
+            <input type="number" class="form-control input-sm" id="inputsm" min=1 max=30 @Html.TextBox("minValue")
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від 1 до 30">?</a>
+
+            <div class="alert alert-success">
+                Початкове значення повинно знаходитися в діапазоні від 1 до 30
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <label class="input-min" for="inputsm">Введіть кінцеве значення діапазону:</label>
+            <input type="number" class="form-control input-sm" id="inputsm" min=-1000 max=1000 @Html.TextBox("maxValue")
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від -1000 до 1000">?</a>
+
+            <div class="alert alert-danger">
+                <strong>Увага! </strong>Кінцеве значення повинно знаходитися в діапазоні від -1000 до 1000
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="input-min" for="inputsm">Введіть кількість елементів масиву:</label>
+            <input type="number" class="form-control input-sm" id="inputsm" min=0 max=30 @Html.TextBox("count")
+            <a href="#" data-toggle="tooltip" data-placement="top" title="Введіть значення від 0 до 30">?</a>
+
+            <div class="alert alert-info">
+                <strong>Увага! </strong>Кількість елементів повинна бути не більше 30
+            </div>
+        </div>*@
+        <br>
+
+        <div class="generation">
+            <h4>Оберіть метод кластеризації графа:</h4>
+        </div>
+
+        <div class="dzen">
+            <p>@Html.RadioButton("distribution", "nedzen", new { @class = "dzen" }) метод  K - середніх </p>
+            <p>@Html.RadioButton("distribution", "dzen", new { @class = "dzen" }) метод Forel </p>
+        </div>
+
+
+        <div class="box">
+            <button class="main_poisk" name="confirm" type="submit" value="inputs">
+                <span>
+                </span>
+            </button>
+        </div>
+        @*<div class="generation">
+            <h4><b>Згенерована початкова множина:</b></h4>
+        </div>
+
+        <p><textarea cols="1000" rows="6" name="comment"> @ZERO.Models.Sets.startSet </textarea></p>
+        <br>
+
+        <div class="alghorithm">
+            <div class="generation">
+                <h4>Оберіть алгоритм для подальшої роботи з програмою:</h4>
+            </div>
+
+            <div class="dzen">
+                <p>@Html.RadioButton("althoritm", "greedy") Жадібний алгоритм</p>
+                <p>@Html.RadioButton("althoritm", "brute") Повний перебір</p>
+            </div>
+        </div>*@
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalAng">Детальніше</button>
+        @*<div class="box">
+            <button class="main_poisk" type="submit" name="confirm" value="Пошук рішення">
+                <span>
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+        </div>*@
+
+
+        <div class="final_set">
+            <div class="generation">
+                @*<h4><b>Остаточна множина:</b></h4>*@
+            </div>
+            <p><textarea cols="100" rows="6" name="comment"> </textarea></p>
+            <br>
+        </div>
+    </div>
+    }
+</div>

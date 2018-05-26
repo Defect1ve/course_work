@@ -1,0 +1,23 @@
+﻿@using Course_Work_Vikhlyayeva_Kotvitskiy.Models
+@model Result
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Result</title>
+</head>
+<body>
+    @for (int i=0; i < Model.coordinates.Length; i++)
+    {
+    <p>@Model.coordinates[i] - @Model.clasters[i]</p>
+    }
+    <div>
+    </div>
+</body>
+</html>
