@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using static System.Object;
 using k_means2;
 
 
@@ -20,7 +21,9 @@ namespace Course_Work_Vikhlyayeva_Kotvitskiy.Controllers
         {
             int c;
             int[] clustering;
+
             Clusterizing cluster = new Clusterizing();
+            
 
             c = int.Parse(Count);
             cluster.InitializeTuples(c, create);

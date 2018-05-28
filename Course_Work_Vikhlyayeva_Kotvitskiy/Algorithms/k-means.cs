@@ -13,6 +13,8 @@ namespace k_means2
         int checkedNumClusters;
         int[] clustering;
         bool clustered = false;
+
+
         //bool meansComputed = false;
         //Brush[] brushes = { Brushes.LimeGreen, Brushes.Blue, Brushes.Orange, Brushes.Red, Brushes.Violet, Brushes.Turquoise };
 

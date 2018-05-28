@@ -7,13 +7,11 @@ namespace Course_Work_Vikhlyayeva_Kotvitskiy.Models
 {
     public class Result
     {
-        public int[] coordinates;
-        public int[] clasters;
+        public static string Str;
 
-        public Result(int[] c, int[]cl)
+        public Result()
         {
-            coordinates = c;
-            clasters = cl;
+            Str = "Tu pidor";
         }
     }
 }
