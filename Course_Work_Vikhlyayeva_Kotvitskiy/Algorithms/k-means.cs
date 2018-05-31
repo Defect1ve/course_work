@@ -57,44 +57,7 @@ namespace k_means2
             }
         }
 
-        //private void Form1_Paint(object sender, PaintEventArgs e)
-        //{
-        //    Graphics g = e.Graphics;
-        //    g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-        //    Brush b = new SolidBrush(Color.Black);
-        //    if (!clustered)
-        //    {
-        //        foreach (var p in rawData)
-        //        {
-        //            Point pPosition = new Point((int)p[0], (int)p[1]);
-        //            g.FillEllipse(b, new RectangleF(pPosition, new Size(6, 6)));
-        //        }
-        //    }
-        //    else
-        //    {
-        //        for (int k = 0; k < numClusters; ++k)
-        //        {
-        //            for (int i = 0; i < rawData.Length; ++i)
-        //            {
-        //                int clusterID = clustering[i];
-        //                b = brushes[clusterID];
-        //                if (clusterID != k) continue;
-        //                Point pPosition = new Point((int)rawData[i][0], (int)rawData[i][1]);
-        //                g.FillEllipse(b, new RectangleF(pPosition, new Size(5, 5)));
-        //            }
-        //        }
-        //    }
-        //    if (meansComputed)
-        //    {
-        //        for (int i = 0; i < numClusters; i++)
-        //        {
-        //            b = brushes[i];
-        //            Point pPosition = new Point((int)means[i][0], (int)means[i][1]);
-        //            g.FillEllipse(b, new RectangleF(pPosition, new Size(11, 11)));
-        //        }
-        //    }
-        //}
-
+     
         // возращает массив кластеров для исходного набора данных
         public int[] Cluster()
         {
@@ -221,65 +184,6 @@ namespace k_means2
             return indexOfMin;
         }
 
-        //private void btnClear_Click(object sender, EventArgs e)
-        //{
-        //    lbl1.Text = "CLUSTERS:";
-        //    clustered = false;
-        //    meansComputed = false;
-        //    InitializeTuples();
-        //    Refresh();
-        //    btnGo.Enabled = true;
-        //}
-
-        //private void btnGo_Click(object sender, EventArgs e)
-        //{
-        //    btnClear.Enabled = false;
-        //    btnGo.Enabled = false;
-        //    clustering = Cluster();
-        //    for (int i = 0; i < rawData.Length; i++)
-        //    {
-        //        lbl1.Text += "\n" + i + ". " + clustering[i];
-        //    }
-        //    clustered = true;
-        //    Refresh();
-        //    btnClear.Enabled = true;
-        //}
-
-        //private void rb_random_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    clusters_group.Enabled = true;
-        //    lbl1.Text = "CLUSTERS:";
-        //    clustered = false;
-        //    meansComputed = false;
-        //    InitializeTuples();
-        //    Refresh();
-        //}
-
-        //private void rb_group_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    rb_3.Checked = true;
-        //    clusters_group.Enabled = false;
-        //}
-
-        //private void rb_1_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    checkedNumClusters = 1;
-        //}
-
-        //private void rb_2_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    checkedNumClusters = 2;
-        //}
-
-        //private void rb_3_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    checkedNumClusters = 3;
-        //}
-
-        //private void rb_4_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    checkedNumClusters = 4;
-        //}
 
         public int[] Cluster2()
         {
@@ -288,6 +192,7 @@ namespace k_means2
             int help;
             int cluster;
             cluster = 1;
+            clustering = InitClustering(); // приписываем данным случайные кластеры
             Random rand = new Random();
             for (int i = 0; i < rawData.Length; ++i)
                 clustering[i] = 0;
